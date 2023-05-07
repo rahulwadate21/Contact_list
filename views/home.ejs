@@ -1,0 +1,23 @@
+<html>
+    <title>
+        <%= locals.title%>
+    </title>
+    <head>
+        
+    </head>
+    <body>
+        <h1> Contact List</h1>
+        <ul>
+            <% for(let i of contact_list) {%>
+               <p><%= i.name%></p> 
+               <p><%=i.phone_no%></p> 
+            <%}%>
+        </ul>
+
+        <form action="/create-contact" method="POST">
+            <input type="text" name="name" placeholder="enter name" required>
+            <input type="number" name="phone" placeholder="Enter phone" required>
+            <button type="submit"> add Contact</button>
+        </form>
+    </body>
+</html>
