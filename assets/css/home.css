@@ -5,11 +5,29 @@ body{
     background-color: lightgrey;
     font-family: cursive;
     font-size: 50px;
-    color: orange;
+    color: rgb(11, 11, 11);
 }
 
 .list-item{
+    /* display: flex; */
     border: 1px solid blue;
     font-size: 30px;
     background-color: bisque;
+    margin-bottom: 2px;
+}
+.btn{
+    background-color: gray;
+    font-size: 15px;
+}
+
+.form-input{
+    border: 2px solid black;
+    font-size: 15px;
+}
+
+.list-item p{
+    /* display: flex; */
+    display: inline-block;
+    /* justify-content: space-between; */
+    margin-right: 100px;
 }

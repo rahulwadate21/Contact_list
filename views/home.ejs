@@ -3,25 +3,30 @@
     <title>
         <%= locals.title%>
     </title>
+        <script src="https://kit.fontawesome.com/7bb99dea02.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="/css/home.css">
     </head>
     <body>
-        <h1 class="title"> Contact List</h1>
+        <h1 class="title"> <i class="fa-solid fa-address-book"></i> Contact List</h1>
         <ul >
 
             <% for(let i of contact_list) {%>
                 <div class="list-item">
-               <p><%= i.name%></p> 
-               <p><%=i.phone%></p> 
+               <span>Name:</span><p><%= i.name%></p> 
+               <span>PhoneNo:</span><p><%=i.phone%></p> 
+               <span>
+                <a href="/delete-contact/?phone=<%=i.phone%>">
+                <i class="fa-solid fa-trash-can"></i></a>
+               </span>
             </div>
             <%}%>
            
         </ul>
 
         <form action="/create-contact" method="POST">
-            <input type="text" name="name" placeholder="enter name" required>
-            <input type="number" name="phone" placeholder="Enter phone" required>
-            <button type="submit"> add Contact</button>
+            <input class="form-input" type="text" name="name" placeholder="enter name" required>
+            <input class="form-input" type="number" name="phone" placeholder="Enter phone" required>
+            <button  class="btn" type="submit"> Add Contact</button>
         </form>
 
         <script type="text/javascript" src="/js/home.js"></script>
