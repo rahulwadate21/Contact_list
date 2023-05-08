@@ -46,11 +46,13 @@ app.get('/practice', function (req, res){
 
 app.post('/create-contact', function(req, res){
 
-    contactList.push({
-        name:req.body.name,
-        phone:req.body.phone
-    });
-    return res.redirect('/');
+    // contactList.push({
+    //     name:req.body.name,
+    //     phone:req.body.phone
+    // });
+    // return res.redirect('/');
+    contactList.push(req.body);
+    return res.redirect('back');
 })
 
 // app.get('/profile', function(req, res){
