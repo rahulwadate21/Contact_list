@@ -7,19 +7,20 @@ const app = express();
 var contactList = [
     {
         name:"Rahul",
-        phone_no:"8468456801"
+        phone:"8468456801"
     },
     {
         name:"Yash",
-        phone_no:"8669655455"
+        phone:"8669655455"
     },
     {
         name:"Shub",
-        phone_no:"8155541082"
+        phone:"8155541082"
     }
 ]
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname,'views'));
+app.use(express.urlencoded());
 
 app.listen(port, function(err){
     if(err){
@@ -44,7 +45,12 @@ app.get('/practice', function (req, res){
 });
 
 app.post('/create-contact', function(req, res){
-    return res.redirect('/home')
+
+    contactList.push({
+        name:req.body.name,
+        phone:req.body.phone
+    });
+    return res.redirect('/');
 })
 
 // app.get('/profile', function(req, res){
