@@ -1,0 +1,15 @@
+body{
+    text-align: center;
+}
+.title{
+    background-color: lightgrey;
+    font-family: cursive;
+    font-size: 50px;
+    color: orange;
+}
+
+.list-item{
+    border: 1px solid blue;
+    font-size: 30px;
+    background-color: bisque;
+}
